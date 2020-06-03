@@ -8,6 +8,7 @@ function orderTopToBottomOnScreen(arrObjs) {
 	// create an empty array to store the object IDs to return
 	const sortedIds = [];
 	// sort the array of objects in place by each object's y coordinate by comparing the first value to the next and moving through the whole array of objects based on the key we select. This ensures we move from top to bottom on a webpage as the y coordinate starts from the top of the screen at 0 and increases as you move down a page.
+	// is there a way to pass in a second parameter that the user could specify one of the keys from the function to replace y in the sort() below?  This way no repeated code and one function
 	arrObjs.sort((a, b) => a.y - b.y);
 	// map over the array, find each object's id, and push it into the array of sortedIDs
 	arrObjs.map(obj => sortedIds.push(obj.id));
@@ -48,7 +49,7 @@ const testArrObjs = [
 	},
 	{
 		id: 3,
-		x: 9,
+		x: 1,
 		y: 10,
 		height: 5,
 		width: 5
